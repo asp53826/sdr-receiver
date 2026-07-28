@@ -6,6 +6,10 @@ The point is not a clean constellation generated with perfect timing. The
 receiver has to recover a burst with carrier offset, phase error, fractional
 sample timing, arbitrary gain, and AWGN all active at once.
 
+[Explore the interactive engineering exhibit](https://asp53826.github.io/sdr-receiver/)
+— a motion-driven walkthrough of the signal chain, measured BER waterfall, and
+design decisions behind the receiver.
+
 ![Measured BER and FER curves](results/ber.png)
 
 ## Measured result
@@ -131,6 +135,15 @@ sdr/
 bench/
   ber_sweep.py   measured BER/FER experiment and plot
 tests/           algebraic, synchronization, and full-chain regression tests
+web/             interactive React exhibit deployed with GitHub Pages
+```
+
+The exhibit can also be run locally:
+
+```bash
+cd web
+npm install
+npm run dev
 ```
 
 ## Scope
@@ -152,4 +165,3 @@ tests/           algebraic, synchronization, and full-chain regression tests
   Optimization”](https://arxiv.org/abs/cs/0609088), 2006.
 - [GNU Radio filter design reference](https://www.gnuradio.org/doc/doxygen/page_filter.html)
   for the RRC/matched-filter convention.
-
