@@ -1,0 +1,27 @@
+[project]
+name = "sdr-receiver"
+version = "0.1.0"
+description = "A measured QPSK software-defined-radio receiver with synchronization and LDPC decoding"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.14",
+]
+
+[project.optional-dependencies]
+dev = [
+  "matplotlib>=3.9",
+  "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sdr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
