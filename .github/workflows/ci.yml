@@ -9,6 +9,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
+      - run: pip install -e .
       - run: pytest -q
       # a short sweep, just to prove the benchmark still runs end to end
       - run: python bench/ber_sweep.py --frames 5 --points 2
